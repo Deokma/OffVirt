@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+  <link rel="stylesheet" th:href="@{/styles/office.css}">
+    <title>Office</title>
+</head>
+<body>
+<!--<div id="office-container">-->
+<!--    <canvas id="office-canvas"></canvas>-->
+<!--    <button id="move-left">Move Left</button>-->
+<!--    <button id="move-right">Move Right</button>-->
+<!--    <button id="move-up">Move Up</button>-->
+<!--    <button id="move-down">Move Down</button>-->
+<!--</div>-->
+<div id="game"></div>
+<script src="https://pixijs.download/release/pixi.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+
+<script th:src="@{/js/office.js}"></script>
+</body>
+</html>

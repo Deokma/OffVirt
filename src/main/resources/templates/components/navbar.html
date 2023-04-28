@@ -1,0 +1,53 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<div th:fragment="navbar">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#" style="margin-left: 10px">OffVirt</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Features</a>
+                </li>
+            </ul>
+        </div>
+        <div class="col d-flex justify-content-end align-items-end">
+            <div th:if="${usersession.username}">
+                <div class="row">
+                    <div class="col">
+                        <button class="btn btn-online-primary btn-sm btn-light float-right px-3" type="submit">
+                            <a href="/account" class="text-decoration-none text-reset">Account</a>
+                        </button>
+                    </div>
+                    <div class="col">
+                        <form class="d-flex " action="/logout" method="post">
+                            <input type="hidden" name="_csrf" th:value="${_csrf.token}">
+                            <input type="submit"
+                                   class="btn btn-online-primary btn-sm btn-light float-right px-3"
+                                   value="Log out">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div th:unless="${usersession.username}">
+                <div class="row">
+                    <div class="col">
+                        <button class="btn btn-online-primary btn-sm btn-light float-right px-3" type="submit">
+                            <a href="/login" class="text-decoration-none text-reset">Login</a>
+                        </button>
+                    </div>
+                    <div class="col">
+                        <button class="btn btn-online-primary btn-sm btn-light float-right px-3" type="submit">
+                            <a href="/registration" class="text-decoration-none text-reset">Register</a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="container">
+  <div class="row justify-content-center mt-5">
+    <div class="col-lg-8 col-md-10 col-sm-12">
+      <div class="card">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-3 text-center">
+              <img th:src="${usersession.avatar}" width="150" height="150" alt="Avatar">
+            </div>
+            <div class="col-md-9">
+              <h2 class="mb-3" th:text="'Username: ' + ${usersession.username}"></h2>
+              <p class="lead mb-1">Email: johndoe@example.com</p>
+              <p class="lead mb-1">Nickname: johndoe123</p>
+              <p class="lead mb-1">Full Name: John Doe</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
